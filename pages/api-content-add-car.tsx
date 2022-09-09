@@ -16,11 +16,8 @@ For more information about this API swagger specification, see [here](swagger-ui
 We will be adding more code examples and more details over time. Thanks for bearing with us and our team! If you have ideas, write us some [feedback](https://docs.estuary.tech/feedback).
 `;
 
-
-
-
 const key = `api-content-add-car`;
-const curl = `curl -X POST https://api.estuary.tech/content/add-car -H "Authorization: Bearer REPLACE_ME_WITH_API_KEY" -H "Accept: application/json" -T PATH_TO_FILE`;
+const curl = `curl -X POST https://upload.estuary.tech/content/add-car -H "Authorization: Bearer REPLACE_ME_WITH_API_KEY" -H "Accept: application/json" -T PATH_TO_FILE`;
 
 const code = `class Example extends React.Component {
  upload(e) {
@@ -31,7 +28,7 @@ const code = `class Example extends React.Component {
     // because we want to show progress. But you can use
     // fetch in this example if you like.
     const xhr = new XMLHttpRequest();
-    var url = "https://api.estuary.tech";
+    var url = "https://upload.estuary.tech";
     xhr.upload.onprogress = (e) => {
       this.setState({ 
         loaded: event.loaded, 
@@ -59,7 +56,7 @@ const code = `class Example extends React.Component {
       </React.Fragment>
     );
   }
-}`
+}`;
 
 function APIContentAddCAR(props) {
   return (
@@ -82,4 +79,3 @@ export async function getServerSideProps(context) {
 }
 
 export default APIContentAddCAR;
-

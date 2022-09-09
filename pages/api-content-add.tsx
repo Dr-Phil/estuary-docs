@@ -10,14 +10,6 @@ Use this endpoint to upload data to the Estuary Node, one file at a time.
 
 For more of an explanation, read [this](https://docs.estuary.tech/tutorial-uploading-your-first-file).
 
-### ?coluid=UUID-OF-YOUR-COLLECTION
-
-Adding this query paramter will add the file to any collection.
-
-### ?dir=/path/to/thing
-
-Adding this query parameter will add the file to a specific path in the collection
-
 ### Swagger
 For more information about this API swagger specification, see [here](swagger-ui-page#/content/post_content_add)
 
@@ -49,7 +41,7 @@ const code = `class Example extends React.Component {
     
     xhr.open(
       "POST", 
-      "https://api.estuary.tech/content/add"
+      "https://upload.estuary.tech/content/add"
     );
     xhr.setRequestHeader(
       "Authorization", 
@@ -69,7 +61,7 @@ const code = `class Example extends React.Component {
   }
 }`;
 
-const curl = `curl -X POST https://api.estuary.tech/content/add?coluuid=UUID-OF-YOUR-COLLECTION&dir=/foo/bar -H "Authorization: Bearer REPLACE_ME_WITH_API_KEY" -H "Accept: application/json" -H "Content-Type: multipart/form-data" -F "data=@PATH_TO_FILE_BUT_REMEMBER_THE_@_SYMBOL_IS_REQUIRED"`;
+const curl = `curl -X POST https://upload.estuary.tech/content/add -H "Authorization: Bearer REPLACE_ME_WITH_API_KEY" -H "Accept: application/json" -H "Content-Type: multipart/form-data" -F "data=@PATH_TO_FILE_BUT_REMEMBER_THE_@_SYMBOL_IS_REQUIRED"`;
 
 function APIContentAdd(props) {
   return (
